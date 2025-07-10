@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 10:57:30 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:38:06 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/10 12:39:46 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static char	**map_copy(t_map *map)
 		ft_strlcpy(copy[i], map->tiles[i], map->width + 1);
 		i++;
 	}
+	
 	return (copy);
 }
 /**
