@@ -6,11 +6,25 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 09:46:04 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:38:12 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 10:27:26 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+/**
+ * Removes newline character from a string if present.
+ */
+static void	remove_newline(char *str)
+{
+	size_t	len;
+
+	if (!str)
+		return ;
+	len = ft_strlen(str);
+	if (len > 0 && str[len - 1] == '\n')
+		str[len - 1] = '\0';
+}
 /**
  * Reads the map file line by line and stores each line in a linked list.
  * Opens the file, reads with get_next_line, creates nodes, and appends them.
@@ -31,6 +45,7 @@ static t_list	*read_lines_into_list(const char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
+		remove_newline(line);
 		node = new_node(line);
 		if (!node)
 		{
