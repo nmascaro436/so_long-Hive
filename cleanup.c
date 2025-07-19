@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:54:42 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:37:47 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 10:49:18 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,10 @@ void	free_all_and_exit(t_game *game, const char *error_message)
 			mlx_terminate(game->mlx);
 	}
 	exit(1);
+}
+void	read_lines_cleanup(char *line, t_list *head, int fd)
+{
+	free(line);
+	free_list_nodes(head);
+	close(fd);
 }

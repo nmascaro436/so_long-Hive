@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 08:40:43 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:32:01 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 10:49:58 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_list	*new_node(char *line);
 void	add_to_end(t_list **head, t_list *new_node);
 int		list_size(t_list *head);
 void	free_list_nodes(t_list *head);
+void	read_lines_cleanup(char *line, t_list *head, int fd);
 
 // Map handling and validation
 t_map	*read_map(const char *filename);

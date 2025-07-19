@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 09:46:04 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 10:27:26 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 10:51:06 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static t_list	*read_lines_into_list(const char *filename)
 		node = new_node(line);
 		if (!node)
 		{
-			free_list_nodes(head);
+			read_lines_cleanup(line, head, fd);
 			return (NULL);
 		}
 		add_to_end(&head, node);
