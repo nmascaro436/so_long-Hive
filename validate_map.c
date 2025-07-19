@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:34:52 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 10:10:56 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:28:23 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
  * matches the width of the first row.
  * Returns 1 if the map is rectangular, 0 otherwise.
  */
+
 static int	is_rectangular(t_map *map)
 {
 	int		row;

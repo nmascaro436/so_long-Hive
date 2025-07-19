@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 09:46:04 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:26:08 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:28:08 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * Removes newline character from a string if present.
  */
+
 static void	remove_newline(char *str)
 {
 	size_t	len;
@@ -31,6 +32,7 @@ static void	remove_newline(char *str)
  * Returns the head of the linked list containing all map lines,
  * or NULL if an error occurs.
  */
+
 static t_list	*read_lines_into_list(const char *filename)
 {
 	int		fd;
@@ -65,6 +67,7 @@ static t_list	*read_lines_into_list(const char *filename)
  * Returns NULL on allocation failure or if list is empty,
  * pointer to the allocated t_map on success.
  */
+
 static t_map	*allocate_map(t_list *list)
 {
 	int	height;
@@ -93,6 +96,7 @@ static t_map	*allocate_map(t_list *list)
  * returns NULL.
  * Returns a pointer to the allocated t_map, or NULL on failure.
  */
+
 static t_map	*convert_list_to_map(t_list *list)
 {
 	t_map	*map;
@@ -121,6 +125,7 @@ static t_map	*convert_list_to_map(t_list *list)
  * frees linked list nodes, and returns the map.
  * Returns NULL if reading or allocation fails.
  */
+
 t_map	*read_map(const char *filename)
 {
 	t_list	*list;
