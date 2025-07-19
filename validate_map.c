@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:34:52 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:50:40 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 10:10:56 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 
 /**
  * Checks if the map is rectangular by ensuring each row's length,
- * matches the width of the first row (ignores any trailing newline).
+ * matches the width of the first row.
  * Returns 1 if the map is rectangular, 0 otherwise.
  */
 static int	is_rectangular(t_map *map)
 {
 	int		row;
 	size_t	len;
-	size_t	actual_len;
 
 	row = 0;
 	while (row < map->height)
 	{
 		len = ft_strlen(map->tiles[row]);
-		if (len > 0 && map->tiles[row][len - 1] == '\n')
-			actual_len = len - 1;
-		else
-			actual_len = len;
-		if (actual_len != (size_t)map->width)
+		if (len != (size_t)map->width)
 			return (0);
 		row++;
 	}

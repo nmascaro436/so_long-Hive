@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:55:48 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 12:39:04 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:26:01 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int	main(int argc, char *argv[])
 	ft_bzero(&game, sizeof(t_game));
 	parse_and_validate_map(argv[1], &game);
 	setup_and_run_game(&game);
-	
 	return (0);
 }
