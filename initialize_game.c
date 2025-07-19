@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:10:47 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:37:52 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:54:41 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 * Stores the MLX context pointer and the map pointer in the provided game struct.
 * Returns 0 on success and 1 if MLX initialization or window creation fails.
 */
+
 int	initialize_game(t_game *game, t_map *map)
 {
 	game->mlx = mlx_init(map->width * TILE_SIZE, map->height * TILE_SIZE,
@@ -84,6 +85,8 @@ static void	cleanup(t_game *game, mlx_texture_t **texture, mlx_image_t **image)
 
 void	cleanup_textures(t_game *game)
 {
+	if (!game || !game->mlx)
+		return ;
 	cleanup(game, &game->textures.player_texture, &game->textures.player_image);
 	cleanup(game, &game->textures.wall_texture, &game->textures.wall_image);
 	cleanup(game, &game->textures.floor_texture, &game->textures.floor_image);
