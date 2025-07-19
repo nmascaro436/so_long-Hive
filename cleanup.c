@@ -6,13 +6,14 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:54:42 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:43:39 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:49:43 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 /**
- * 
+ * Frees memory used for the 2D tile array
+ * and the map structure.
  */
 
 void	free_map(t_map *map)
@@ -35,7 +36,9 @@ void	free_map(t_map *map)
 	free(map);
 }
 /**
-* 
+* Frees all game_related resources and exits the program.
+* Prints error message to stderr.
+* Frees the graphic contents, textures, map, and exits program.
 */
 
 void	free_all_and_exit(t_game *game, const char *error_message)
@@ -55,7 +58,8 @@ void	free_all_and_exit(t_game *game, const char *error_message)
 	exit(1);
 }
 /**
- * 
+ * Frees the last line read, the list of all read lines,
+ * and closes the file descriptor.
  */
 
 void	read_lines_cleanup(char *line, t_list *head, int fd)
@@ -65,7 +69,7 @@ void	read_lines_cleanup(char *line, t_list *head, int fd)
 	close(fd);
 }
 /**
- * 
+ * Frees a partially allocated map structure.
  */
 
 void	free_partial_map_allocations(t_map *map, int alloc_rows)
