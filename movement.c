@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:14:23 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:43:50 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 12:00:15 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 * It calls move_player with direction depending on WASD/arrow.
 * If Esc is pressed it exits the game cleanly.
 */
+
 void	key_handler(mlx_key_data_t keydata, void *param)
 {
 	t_game	*game;
@@ -29,9 +30,9 @@ void	key_handler(mlx_key_data_t keydata, void *param)
 	if (keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT)
 		move_player(game, -1, 0);
 	if (keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_DOWN)
-		move_player(game, 0, +1);
+		move_player(game, 0, 1);
 	if (keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT)
-		move_player(game, +1, 0);
+		move_player(game, 1, 0);
 	if (keydata.key == MLX_KEY_ESCAPE)
 		free_all_and_exit(game, "Game closed");
 }

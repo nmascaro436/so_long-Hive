@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:55:48 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 13:26:01 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:56:37 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  * Parses the map file and validates its contents.
  * If loading or validation fails, exits with an error.
  */
+
 static void	parse_and_validate_map(const char *filename, t_game *game)
 {
 	t_map	*map;
@@ -38,6 +39,7 @@ static void	parse_and_validate_map(const char *filename, t_game *game)
  * Initializes the game environment and runs the game loop.
  * If initialization or texture loading fails, exits with an error.
  */
+
 static void	setup_and_run_game(t_game *game)
 {
 	if (initialize_game(game, game->map) != 0)
@@ -59,6 +61,7 @@ static void	setup_and_run_game(t_game *game)
  * then sets up and runs the game.
  * Returns 0 on success, 1 on error.
  */
+
 int	main(int argc, char *argv[])
 {
 	t_game	game;
