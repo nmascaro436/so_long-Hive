@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:55:48 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:56:37 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:29:04 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static void	parse_and_validate_map(const char *filename, t_game *game)
 
 	map = read_map(filename);
 	if (!map)
-		free_all_and_exit(game, "Error: failed to load map");
+		free_all_and_exit(game, NULL);
 	if (!validate_map(map))
 	{
 		game->map = map;
-		free_all_and_exit(game, "Error: invalid map");
+		free_all_and_exit(game, NULL);
 	}
 	game->map = map;
 	game->collectibles_left = count_collectibles(map);
