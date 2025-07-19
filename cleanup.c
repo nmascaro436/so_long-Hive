@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 11:54:42 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 10:49:18 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:08:34 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	free_map(t_map *map)
 * Frees the map (if allocated), cleans up all loaded textures
 * and images and terminates the MLX window context.
 */
-
 void	free_all_and_exit(t_game *game, const char *error_message)
 {
 	if (error_message)
@@ -52,4 +51,17 @@ void	read_lines_cleanup(char *line, t_list *head, int fd)
 	free(line);
 	free_list_nodes(head);
 	close(fd);
+}
+void	free_partial_map_allocations(t_map *map, int alloc_rows)
+{
+	int	i;
+
+	i = 0;
+	while (i < alloc_rows)
+	{
+		free(map->tiles[i]);
+		i++;
+	}
+	free(map->tiles);
+	free(map);
 }
