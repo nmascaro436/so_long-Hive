@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 09:46:04 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 10:51:06 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/19 11:26:08 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,16 @@ static t_list	*read_lines_into_list(const char *filename)
 	return (head);
 }
 /**
- * Converts the linked list of map lines into a t_map structure.
- * Allocates memory for the map struct and its tiles array.
- * Copies lines from the linked list to the array.
- * Sets map height and width (based on first line length).
- * Returns a pointer to the allocated t_map, or NULL on failure.
+ * Allocates memory for a t_map structure and its tiles array.
+ * Sets height based on the size of the input list, and
+ * width based on the length of the first line.
+ * Returns NULL on allocation failure or if list is empty,
+ * pointer to the allocated t_map on success.
  */
-
-static t_map	*convert_list_to_map(t_list *list)
+static t_map	*allocate_map(t_list *list)
 {
+	int	height;
 	t_map	*map;
-	int		height;
-	int		i;
 
 	height = list_size(list);
 	if (height == 0)
@@ -78,20 +76,43 @@ static t_map	*convert_list_to_map(t_list *list)
 	map = malloc(sizeof(t_map));
 	if (!map)
 		return (NULL);
-	map->tiles = malloc(sizeof(char *) * (height + 1));
+	map->tiles = malloc(sizeof(char *) * height);
 	if (!map->tiles)
 	{
 		free(map);
 		return (NULL);
 	}
 	map->height = height;
+	map->width = ft_strlen(list->content);
+	return (map);
+}
+/**
+ * Converts the linked list of map lines into a t_map structure.
+ * Duplicates each line in the list into the map's tiles array.
+ * On allocation failure, frees any allocated memory and
+ * returns NULL.
+ * Returns a pointer to the allocated t_map, or NULL on failure.
+ */
+static t_map	*convert_list_to_map(t_list *list)
+{
+	t_map	*map;
+	int		i;
+
+	map = allocate_map(list);
+	if (!map)
+		return (NULL);
 	i = 0;
-	while (list)
+	while (list && i < map->height)
 	{
-		map->tiles[i++] = list->content;
+		map->tiles[i] = ft_strdup(list->content);
+		if (!map->tiles[i])
+		{
+			free_partial_map_allocations(map, i);
+			return (NULL);
+		}
 		list = list->next;
+		i++;
 	}
-	map->width = ft_strlen(map->tiles[0]);
 	return (map);
 }
 /**
@@ -100,7 +121,6 @@ static t_map	*convert_list_to_map(t_list *list)
  * frees linked list nodes, and returns the map.
  * Returns NULL if reading or allocation fails.
  */
-
 t_map	*read_map(const char *filename)
 {
 	t_list	*list;
