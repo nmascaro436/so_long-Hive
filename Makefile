@@ -6,7 +6,7 @@
 #    By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/18 14:30:09 by nmascaro          #+#    #+#              #
-#    Updated: 2025/07/10 11:37:59 by nmascaro         ###   ########.fr        #
+#    Updated: 2025/07/23 08:36:50 by nmascaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = cleanup.c initialize_game.c main.c movement.c path_validation.c \
 		read_map.c read_map_utils.c rendering.c validate_map.c
 OBJS = $(SRCS:.c=.o)
-MLX_DIR = /home/nmascaro/Documents/Studies/so_long/MLX42
+MLX_DIR = ../MLX42
 MLX_FLAGS = -I$(MLX_DIR)/include
 MLX_LIBS = $(MLX_DIR)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
