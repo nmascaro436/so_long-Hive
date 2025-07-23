@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 09:46:04 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:28:08 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/23 10:47:21 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static t_list	*read_lines_into_list(const char *filename)
 
 static t_map	*allocate_map(t_list *list)
 {
-	int	height;
+	int		height;
 	t_map	*map;
 
 	height = list_size(list);

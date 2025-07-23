@@ -6,11 +6,12 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:52:40 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:35:08 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/23 10:43:40 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_atoi(const char *nptr)
 {
 	int		sign;

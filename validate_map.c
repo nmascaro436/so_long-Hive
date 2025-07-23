@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:34:52 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:28:23 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/23 10:48:18 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	has_valid_chars(t_map *map)
 		while (col < map->width)
 		{
 			if (!update_counts_check_tile(map->tiles[row][col],
-					&starting_pos_count, &exit_count, &collectible_count))
+				&starting_pos_count, &exit_count, &collectible_count))
 				return (0);
 			col++;
 		}
@@ -135,8 +135,8 @@ int	validate_map(t_map *map)
 	if (!has_valid_chars(map))
 	{
 		ft_putendl_fd("Error: invalid characters "
-						"or wrong number of E, C or P",
-						2);
+			"or wrong number of E, C or P",
+			2);
 		return (0);
 	}
 	if (!path_validation(map))
