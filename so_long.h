@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 08:40:43 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/19 11:08:07 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/23 10:40:38 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <fcntl.h> 
 # include <stdlib.h>
 # include "libft/libft.h"
-# include "MLX42/include/MLX42/MLX42.h"
+# include "MLX42/MLX42.h"
 
 # define TILE_SIZE 64
 
