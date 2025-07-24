@@ -47,7 +47,7 @@ void	render_map(t_game *game)
 		{
 			tile = game->map->tiles[row][col];
 			mlx_image_to_window(game->mlx, game->textures.floor_image,
-				col * TILE_SIZE, row * TILE_SIZE);
+					col * TILE_SIZE, row * TILE_SIZE);
 			helper_render(game, tile, row, col);
 			col++;
 		}

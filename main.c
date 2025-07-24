@@ -47,7 +47,7 @@ static void	setup_and_run_game(t_game *game)
 	if (load_textures(game) != 0)
 		free_all_and_exit(game, "Error: failed to load textures");
 	render_map(game);
-	mlx_loop_hook(game->mlx, key_handler, game);
+	mlx_key_hook(game->mlx, key_handler, game);
 	mlx_loop(game->mlx);
 	cleanup_textures(game);
 	mlx_terminate(game->mlx);

@@ -98,6 +98,6 @@ void	move_player(t_game *game, int horizontal_move, int vertical_move);
 void	render_map(t_game *game);
 
 // Input handling
-void	key_handler(void *param);
+void	key_handler(mlx_key_data_t keydata, void *param);
 
 #endif
