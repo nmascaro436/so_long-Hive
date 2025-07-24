@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:14:23 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/24 08:46:56 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/24 09:28:41 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,17 @@ void	key_handler(void *param)
 	game = (t_game *)param;
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		free_all_and_exit(game, "Game closed");
-	if (mlx_is_key_down(game->mlx, MLX_KEY_W) || mlx_is_key_down(game->mlx, MLX_KEY_UP))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_W)
+		|| mlx_is_key_down(game->mlx, MLX_KEY_UP))
 		move_player(game, 0, -1);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_A) || mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_A)
+		|| mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
 		move_player(game, -1, 0);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_S) || mlx_is_key_down(game->mlx, MLX_KEY_DOWN))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_S)
+		|| mlx_is_key_down(game->mlx, MLX_KEY_DOWN))
 		move_player(game, 0, 1);
-	if (mlx_is_key_down(game->mlx, MLX_KEY_D) || mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
+	if (mlx_is_key_down(game->mlx, MLX_KEY_D)
+		|| mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
 		move_player(game, 1, 0);
 }
 /**
