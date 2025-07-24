@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 08:40:43 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/23 10:40:38 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/24 08:31:48 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ void	move_player(t_game *game, int horizontal_move, int vertical_move);
 void	render_map(t_game *game);
 
 // Input handling
-void	key_handler(mlx_key_data_t keydata, void *param);
+void	key_handler(void *param);
 
 #endif

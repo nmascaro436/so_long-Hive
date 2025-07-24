@@ -6,35 +6,34 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:14:23 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/23 10:47:27 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/24 08:46:56 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 /**
-* Handles keyboard input events.
-* Reacts only to key press events, ignores release or repeat.
+* Handles real-time keyboard input for the game.
+* Called every frame wia mlx_loop_hook, and uses
+* mlx_key_is_down to check for continuous key presses.
 * It calls move_player with direction depending on WASD/arrow.
 * If Esc is pressed it exits the game cleanly.
 */
 
-void	key_handler(mlx_key_data_t keydata, void *param)
+void	key_handler(void *param)
 {
 	t_game	*game;
 
 	game = (t_game *)param;
-	if (keydata.action != MLX_PRESS)
-		return ;
-	if (keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP)
-		move_player(game, 0, -1);
-	if (keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT)
-		move_player(game, -1, 0);
-	if (keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_DOWN)
-		move_player(game, 0, 1);
-	if (keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT)
-		move_player(game, 1, 0);
-	if (keydata.key == MLX_KEY_ESCAPE)
+	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		free_all_and_exit(game, "Game closed");
+	if (mlx_is_key_down(game->mlx, MLX_KEY_W) || mlx_is_key_down(game->mlx, MLX_KEY_UP))
+		move_player(game, 0, -1);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_A) || mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
+		move_player(game, -1, 0);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_S) || mlx_is_key_down(game->mlx, MLX_KEY_DOWN))
+		move_player(game, 0, 1);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_D) || mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
+		move_player(game, 1, 0);
 }
 /**
 * Increments the move count, prints the current move count to standard output
