@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:55:48 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/24 08:34:16 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:32:31 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,17 @@ static void	setup_and_run_game(t_game *game)
 int	main(int argc, char *argv[])
 {
 	t_game	game;
+	int		len;
 
 	if (argc != 2)
 	{
 		ft_putendl_fd("Error: missing map file argument", 2);
+		return (1);
+	}
+	len = ft_strlen(argv[1]);
+	if (len < 4 || ft_strncmp(argv[1] + len - 4, ".ber", 4) != 0)
+	{
+		ft_putendl_fd("Error: map extension is not .ber", 2);
 		return (1);
 	}
 	ft_bzero(&game, sizeof(t_game));
