@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:14:23 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/25 10:01:15 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 10:30:18 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	key_handler(mlx_key_data_t keydata, void *param)
 
 static void	print_moves(t_game *game)
 {
-	game->move_count++;
 	ft_putstr_fd("Moves: ", 1);
 	ft_putnbr_fd(game->move_count, 1);
 	ft_putendl_fd("", 1);
