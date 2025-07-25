@@ -6,13 +6,13 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:46:07 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/10 11:22:20 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 09:44:59 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	helper_render(t_game *game, char tile, int row, int col)
+void	helper_render(t_game *game, char tile, int row, int col)
 {
 	if (tile == '1')
 		mlx_image_to_window(game->mlx, game->textures.wall_image,
@@ -28,6 +28,7 @@ static void	helper_render(t_game *game, char tile, int row, int col)
 			col * TILE_SIZE, row * TILE_SIZE);
 }
 /**
+ * Initial render of the entire map, only called once at game start.
 * For each tile, the function first draws the floor image as the base. 
 * And then depending on the character, it draws accordingly.
 * Each image is placed at the corresponding position scaled by TILE_SIZE.

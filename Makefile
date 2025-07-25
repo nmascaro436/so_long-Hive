@@ -6,7 +6,7 @@
 #    By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/18 14:30:09 by nmascaro          #+#    #+#              #
-#    Updated: 2025/07/23 10:39:11 by nmascaro         ###   ########.fr        #
+#    Updated: 2025/07/25 09:39:57 by nmascaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = so_long
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = cleanup.c initialize_game.c main.c movement.c path_validation.c \
-		read_map.c read_map_utils.c rendering.c validate_map.c
+		read_map.c read_map_utils.c rendering.c validate_map.c \
+		rendering_optimization.c
 OBJS = $(SRCS:.c=.o)
 MLX_DIR = mlx
 MLX_LIB = $(MLX_DIR)/build/libmlx42.a
