@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 08:40:43 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/25 09:57:59 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 10:03:02 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ typedef struct s_textures
  */
 typedef struct s_move
 {
-	int	old_x;
-	int	old_y;
-	int	target_x;
-	int	target_y;
+	int		old_x;
+	int		old_y;
+	int		target_x;
+	int		target_y;
 	char	target_tile;
 }	t_move;
 /**

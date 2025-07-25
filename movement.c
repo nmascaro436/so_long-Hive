@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:14:23 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/25 09:25:09 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 10:01:15 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void	move_player(t_game *game, int horizontal_move, int vertical_move)
 	move.old_y = game->player_y;
 	move.target_x = game->player_x + horizontal_move;
 	move.target_y = game->player_y + vertical_move;
-	if (move.target_x < 0 || move.target_y < 0 || move.target_x >= game->map->width
-		|| move.target_y >= game->map->height)
+	if (move.target_x < 0 || move.target_y < 0 || move.target_x
+		>= game->map->width || move.target_y >= game->map->height)
 		return ;
 	move.target_tile = game->map->tiles[move.target_y][move.target_x];
 	if (move.target_tile == '1')

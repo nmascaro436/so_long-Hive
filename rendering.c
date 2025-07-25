@@ -6,7 +6,7 @@
 /*   By: nmascaro <nmascaro@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:46:07 by nmascaro          #+#    #+#             */
-/*   Updated: 2025/07/25 09:44:59 by nmascaro         ###   ########.fr       */
+/*   Updated: 2025/07/25 10:02:02 by nmascaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	render_map(t_game *game)
 		{
 			tile = game->map->tiles[row][col];
 			mlx_image_to_window(game->mlx, game->textures.floor_image,
-					col * TILE_SIZE, row * TILE_SIZE);
+				col * TILE_SIZE, row * TILE_SIZE);
 			helper_render(game, tile, row, col);
 			col++;
 		}
