@@ -16,6 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = cleanup.c initialize_game.c main.c movement.c path_validation.c \
 		read_map.c read_map_utils.c rendering.c validate_map.c \
 		rendering_optimization.c
+.SECONDARY: $(OBJS)
 OBJS = $(SRCS:.c=.o)
 MLX_DIR = mlx
 MLX_LIB = $(MLX_DIR)/build/libmlx42.a
